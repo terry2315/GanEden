@@ -1,21 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Capriola&family=Delius&family=Gabarito:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <title>GanEden</title>
 </head>
+
 <body>
     <div class="layout">
-        
+
+        <!-- Encabezado y banner -->
+
         <header class="layout__header">
+
+            <!-- Barra de navegacion -->
+
             <nav class="header__navbar">
-                <div class="navbar__content--tittle">
-                    <h1>GanEden</h1>
+                <div class="navbar__content--logo">
+                    <a href="#" class="navbar__content--letter">
+                        <span class="logo__span">G</span>
+                        <p class="logo__text">anEden</p>
+                    </a>
+                </div>
+
+                <ul class="navbar__content--list">
+                    <li class="navbar__list">
+                        <a class="navbar__link" href="#">Cursos</a>
+
+                        <ul id="navbar__submenu--courses" class="navbar__submenu">
+
+                            <!-- Esto se rellenara con JS -->
+
+
+                            <li class="submenu__list">
+                                <a data-subject="historia" class="submenu__link btn__subject" href="#">Historia</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a data-subject="antropologia" class="submenu__link btn__subject" href="#">Antropologia</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a data-subject="matematicas" class="submenu__link btn__subject" href="#">Matematicas</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a data-subject="astronomia" class="submenu__link btn__subject" href="#">Astronomia</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a data-subject="psicologia" class="submenu__link btn__subject" href="#">Psicologia</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="navbar__list">
+                        <a class="navbar__link" href="#">Profesores</a>
+
+                        <ul class="navbar__submenu">
+                            <li class="submenu__list">
+                                <a class="submenu__link" href="#">Simon Bolivar</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a class="submenu__link" href="#">Espartaco Traciano</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a class="submenu__link" href="#">Aaron Cohen</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a class="submenu__link" href="#">Galileo Galilei</a>
+                            </li>
+
+                            <li class="submenu__list">
+                                <a class="submenu__link" href="#">Gibson Zenon</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="navbar__list">
+                        <a class="navbar__link" href="#">Blog</a>
+                    </li>
+                </ul>
+
+                <div class="navbar__content--login">
+                    <button class="navbar__btn--newUser">Crear cuenta</button>
+                    <button class="navbar__btn--login">Abrir cuenta</button>
                 </div>
             </nav>
+
+            <!-- Banner -->
+
+            <section class="header__banner">
+
+                <div class="banner__content--description">
+                    <h1 class="banner__tittle">GanEden</h1>
+                    <p class="banner__description">
+                        Aqui podras formarte con los mejores
+                        profesores en areas de Historia, Phicologia, Antropologia,
+                        Fisica Cuantica.
+                    </p>
+
+                    <p class="banner__text">Porque de todos los arboles del huerto podras comer</p>
+                </div>
+
+            </section>
         </header>
 
+        <!-- Menu principal -->
+
+        <main class="layout__main">
+
+            <section class="main__courses">
+                <header class="courses__header">
+                    <div class="courses__header--content">
+                        <h2 class="courses__subtittle">Bienvenido a nuestros bootcamp</h2>
+                        <p class="courses__description">Aprende y disfruta con nuestros cursos en diferidos</p>
+                    </div>
+
+                </header>
+
+                <main id="main__content--courses" class="main__content--courses">
+<!-- 
+                    <article class="course">
+                        <div class="course__content--img">
+                            <img class="course__img" src="./assets/img/ganeden_profesores/profesor_simon_bolivar.jpg" alt="">
+                        </div>
+
+                        <div class="course__content--description">
+                            <ul class="course__description--left">
+                                <li class="course__list--left">Materia :</li>
+                                <li class="course__list--left">Titulo :</li>
+                                <li class="course__list--left">Duracion :</li>
+                                <li class="course__list--left">Precio :</li>
+                                <li class="course__list--left">Profesor :</li>
+                            </ul>
+
+                            <ul class="course__description--right">
+                                <li class="course__list--right">${}</li>
+                                <li class="course__list--right">${}</li>
+                                <li class="course__list--right">${}</li>
+                                <li class="course__list--right">${}</li>
+                                <li class="course__list--right">${}</li>
+                            </ul>
+                        </div>
+                    </article> -->
+
+
+
+
+                </main>
+
+            </section>
+
+        </main>
+
+        <!-- Modal -->
+
+        <section class="modal__background">
+
+        </section>
+
+
     </div>
+
+    <script src="./js/arrayUser.js"></script>
+    <script src="./js/index.js"></script>
+
 </body>
+
 </html>
