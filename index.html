@@ -45,11 +45,13 @@
                             </li>
 
                             <li class="submenu__list">
-                                <a data-subject="antropologia" class="submenu__link btn__subject" href="#">Antropologia</a>
+                                <a data-subject="antropologia" class="submenu__link btn__subject"
+                                    href="#">Antropologia</a>
                             </li>
 
                             <li class="submenu__list">
-                                <a data-subject="matematicas" class="submenu__link btn__subject" href="#">Matematicas</a>
+                                <a data-subject="matematicas" class="submenu__link btn__subject"
+                                    href="#">Matematicas</a>
                             </li>
 
                             <li class="submenu__list">
@@ -110,7 +112,7 @@
                     <h1 class="banner__tittle">GanEden</h1>
                     <p class="banner__description">
                         Aqui podras formarte con los mejores
-                        profesores en areas de Historia, Phicologia, Antropologia,
+                        profesores en areas de Historia, Psicologia, Antropologia,
                         Fisica Cuantica.
                     </p>
 
@@ -134,8 +136,8 @@
                 </header>
 
                 <main id="main__content--courses" class="main__content--courses">
-<!-- 
-                    <article class="course">
+                    
+                    <!-- <article class="course">
                         <div class="course__content--img">
                             <img class="course__img" src="./assets/img/ganeden_profesores/profesor_simon_bolivar.jpg" alt="">
                         </div>
@@ -157,6 +159,10 @@
                                 <li class="course__list--right">${}</li>
                             </ul>
                         </div>
+
+                        <div class="course__content--btn">
+                           <button data-id="id" class="course__btn">Ver mas</button>   
+                        </div>
                     </article> -->
 
 
@@ -166,17 +172,128 @@
 
             </section>
 
-        </main>
-
         <!-- Modal -->
 
         <section class="modal__background">
+            <section class="modal__content">
 
+                <header class="modal__header">
+
+                    <div class="navbar__content--logo">
+                        <a href="#" class="navbar__content--letter">
+                            <span class="logo__span">G</span>
+                            <p class="logo__text">anEden</p>
+                        </a>
+                    </div>
+
+                    <div class="modal__header--content">
+                        <button class="modal__btn--close">X</button>
+                    </div>
+                </header>
+
+                <main class="modal__main">
+
+                    <section class="modal__main--description">
+                        <h3 class="modal__main--tittle">Curso de Psicologia</h3>
+                        <div class="modal__content--text">
+                            <p class="modal__description--text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Voluptas inventore accusantium excepturi rerum culpa
+                                nostrum omnis tempore incidunt molestiae, blanditiis,
+                                libero quos beatae eius possimus voluptatem
+                                a veritatis officiis suscipit?
+                            </p>
+                        </div>
+
+                        <div class="modal__content--buy">
+                            <div class="content__buy">
+                                <p class="buy__price">Precio</p>
+                                <button class="buy__price--btn">Medios de pago</button>
+                            </div>
+
+                            <div class="content__btn--buy">
+                                <button class="btn__buy">Comprar curso</button>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="modal__main--img">
+                        <div class="modal__content--img">
+                            <img class="modal__img" src="./assets/img/ganeden_profesores/profesor_aaron.jpg" alt="">
+                        </div>
+                    </section>
+
+                    <section class="modal__main--info">
+                        <p class="modal__info--subtittle">¿Que incliye tu formacion?</p>
+
+                        <ul class="modal__info--content">
+                            <li class="modal__info--list">
+                                <i class="info__text--icon fa-solid fa-check"></i>
+                                <p class="modal__info--text">Clases online de mentores expertos</p>
+                            </li>
+
+                            <li class="modal__info--list">
+                                <i class="info__text--icon fa-solid fa-check"></i>
+                                <p class="modal__info--text">Acceso a contenido pregrabado 24/7</p>
+                            </li>
+
+                            <li class="modal__info--list">
+                                <i class="info__text--icon fa-solid fa-check"></i>
+                                <p class="modal__info--text">Libros en PDF</p>
+                            </li>
+
+                            <li class="modal__info--list">
+                                <i class="info__text--icon fa-solid fa-check"></i>
+                                <p class="modal__info--text">Graficos</p>
+                            </li>
+
+                            <li class="modal__info--list">
+                                <i class="info__text--icon fa-solid fa-check"></i>
+                                <p class="modal__info--text">Consejos y sugerencia con tu profesor</p>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                </main>
+                <footer class="modal__footer">
+                    <ul class="modal__footer--content">
+                        <li class="modal__footer--list">
+                            <i class="modal__footer--icon fa-solid fa-calendar-days"></i>
+                            <p class="modal__footer--description">Duracion</p>
+                            <p class="modal__footer--description">Duracion</p>
+                        </li>
+
+                        <li class="modal__footer--list">
+                            <i class="modal__footer--icon fa-solid fa-clock"></i>
+                            <p class="modal__footer--description">Dedicacion</p>
+                            <p class="modal__footer--description">Dedicacion</p>
+                        </li>
+
+                        <li class="modal__footer--list">
+                            <i class="modal__footer--icon fa-solid fa-dollar-sign"></i>
+                            <p class="modal__footer--description">Precio</p>
+                            <p class="modal__footer--description">Precio</p>
+                        </li>
+
+                        <li class="modal__footer--list">
+                            <i class="modal__footer--icon fa-solid fa-clock"></i>
+                            <p class="modal__footer--description">Materia</p>
+                            <p class="modal__footer--description">Materia</p>
+                        </li>
+                    </ul>
+                </footer>
+            </section>
         </section>
+
+        </main>
+
+   
 
 
     </div>
-
+    <script src="https://kit.fontawesome.com/a478469ca1.js" crossorigin="anonymous"></script>
     <script src="./js/arrayUser.js"></script>
     <script src="./js/index.js"></script>
 
