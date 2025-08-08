@@ -259,7 +259,7 @@ body {
     font-size: 12rem;
     font-weight: bold;
     line-height: 1.5;
-    color: var(--color-accent-1);
+    color: var(--color-secundary-1);
 }
 
 .banner__description {
