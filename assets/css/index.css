@@ -481,203 +481,188 @@ body {
 }
 
 .modal__main {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    text-align: center;
+    padding: 2rem;
+}
+
+.modal__layout {
     width: 100%;
-    height: 55vh;
-    gap: 1rem;
+    height: 100%;
 }
 
-.modal__main--description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    width: 35%;
-    height: 50vh;
-    padding: 1rem;
-    overflow: hidden;
-}
-
-.modal__main--tittle {
-    font-size: 3.5rem;
-    font-weight: 500;
-    color: var(--color-secundary-1);
-}
-
-.modal__content--text {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.modal__description--text {
-    width: 100%;
-    font-size: 1.3rem;
-    font-weight: normal;
-    color: var(--color-accent-1);
-}
-
-.modal__content--buy {
-    width: 100%;
-}
-
-.content__buy {
+.modal__main--top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 8rem;
+    height: 50vh;
+}
+
+.modal__content--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    width: 35%;
+    height: 100%;
+}
+
+.modal__content--tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+}
+
+.modal__tittle {
+    text-align: left;
     margin-bottom: 2rem;
-    padding: 0.5rem 1.5rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-secundary-1);
+}
+
+.modal__description {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.modal__content--price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
     border-radius: 5px;
     border: 1px solid var(--color-accent-1);
 }
 
-.buy__price {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-accent-1);
+.modal__content--price {
+    display: flex;
 }
 
-.buy__price--btn {
-    padding-bottom: 0.5rem;
+.modal__price {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    height: 100%;
+    gap: 0.5rem;
+}
+
+.modal__dollar--icon {
+    font-size: 2.5rem;
+}
+
+.modal__price--span {
+    font-size: 3rem;
+}
+
+.modal__price--currency {
+    display: flex;
+    align-self: center;
+    font-size: 2.2rem;
+}
+
+.modal__btn--methodPay {
+    position: relative;
+    font-family: 'Roboto';
+    font-size: 1.6rem;
     border: none;
-    border-bottom: 1px solid transparent;
     background-color: transparent;
     cursor: pointer;
-    transition: 300ms ease-in-out;
 }
 
-.buy__price--btn:hover {
-    color: var(--color-secundary-1);
-    border-bottom: 1px solid var(--color-secundary-1);
-}
-
-.content__btn--buy {
+.modal__btn--methodPay::before {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    content: '';
     width: 100%;
-    height: 5rem;
+    height: 1px;
+    background-color: var(--color-accent-1);
 }
 
-.btn__buy {
+.modal__content--btnGet {
     width: 100%;
-    height: 100%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-primary-1);
-    border: none;
-    border-radius: 5px;
-    background: var(--color-accent-1);
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-}
-
-.btn__buy:hover {
-    color: var(--color-secundary-1);
-    background: var(--color-accent-2);
-}
-
-.modal__main--img {
-    width: 30%;
-    height: 50vh;
-    border-radius: 10px;
+    height: 4.5rem;
     overflow: hidden;
 }
 
-.modal__img {
+.btn__Get {
     width: 100%;
     height: 100%;
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--color-primary-1);
+    background-color: var(--color-accent-1);
 }
 
-.modal__main--info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    width: 40%;
-    height: 50vh;
-    padding: 1rem;
+.modal__content--middle {
+    overflow: hidden;
+    width: 30rem;
+    height: 30rem;
 }
 
-.modal__info--subtittle {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: var(--color-secundary-1);
-    font-weight: bold;
+.modal__content--img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
 
-.modal__info--content {
-    width: 80%;
-    padding: 2rem;
+.img__description {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal__content--right {
+    padding: 1.5rem;
     border-radius: 10px;
     border: 1px solid var(--color-accent-1);
 }
 
-.modal__info--list {
+.modal__content--info {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     text-align: center;
     width: 100%;
-    padding: 1.2rem;
+    height: 100%;
+    gap: 2rem;
+}
+
+.modal__list--info {
+    display: flex;
     gap: 1rem;
     border-bottom: 1px solid var(--color-accent-1);
 }
 
-.modal__info--list:last-child {
-    text-align: left;
-    text-wrap: nowrap;
-    border-bottom: none;
-}
 
-.info__text--icon {
-    text-wrap: nowrap;
-    color: var(--color-secundary-1);
-}
-
-.modal__footer {
-    padding: 1rem;
-    border-top: 1px solid var(--color-accent-1)
-}
-
-.modal__footer--content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
+.modal__content--botton {
     width: 100%;
-    height: 100%;
     padding: 1rem;
+    height: auto;
 }
 
-.modal__footer--list {
+.modal__content--list {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
+    margin-top: 1.5rem;
     width: 100%;
     height: 100%;
-    gap: 0.5rem;
-    transition: all 300ms ease-in-out;
+    padding: 1rem;
 }
 
-.modal__footer--list:hover {
-    color: var(--color-secundary-1);
+.modal__list--botton {
+    font-size: 1.2rem;
 }
-
-
-
-
-
-
-
 
 
 
