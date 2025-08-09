@@ -481,52 +481,48 @@ body {
 }
 
 .modal__main {
-    padding: 2rem;
-}
-
-.modal__layout {
     width: 100%;
     height: 100%;
 }
 
-.modal__main--top {
+.modal__content--description {
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal__content--top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 50vh;
+    height: 60%;
+    gap: 5rem;
 }
 
-.modal__content--left {
+.modal__top--left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    text-align: center;
     width: 35%;
-    height: 100%;
-}
-
-.modal__content--tittle {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    width: 100%;
 }
 
 .modal__tittle {
-    text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--color-secundary-1);
 }
 
-.modal__description {
-    font-size: 1.5rem;
+.modal__description--text {
+    text-align: left;
+    margin-bottom: 2.5rem;
+    font-size: 1.4rem;
     font-weight: normal;
+    color: var(--color-accent-1);
 }
 
 .modal__content--price {
@@ -535,50 +531,35 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
+    height: 8rem;
     padding: 2rem;
-    border-radius: 5px;
     border: 1px solid var(--color-accent-1);
+    border-radius: 10px;
 }
 
-.modal__content--price {
-    display: flex;
+.modal__price--text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-accent-1);
 }
 
-.modal__price {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    align-self: center;
-    height: 100%;
-    gap: 0.5rem;
-}
-
-.modal__dollar--icon {
-    font-size: 2.5rem;
-}
-
-.modal__price--span {
-    font-size: 3rem;
-}
-
-.modal__price--currency {
-    display: flex;
-    align-self: center;
-    font-size: 2.2rem;
-}
-
-.modal__btn--methodPay {
+.modal__price--btn {
     position: relative;
-    font-family: 'Roboto';
-    font-size: 1.6rem;
+    font-family: monospace;
+    font-size: 1.4rem;
+    font-weight: normal;
     border: none;
-    background-color: transparent;
-    cursor: pointer;
+    background: transparent;
+    transition: 300ms ease-in-out;
 }
 
-.modal__btn--methodPay::before {
+.modal__price--btn:hover {
+    color: var(--color-secundary-1);
+}
+
+.modal__price--btn::before {
     position: absolute;
-    top: 90%;
+    top: 100%;
     left: 0;
     content: '';
     width: 100%;
@@ -586,83 +567,84 @@ body {
     background-color: var(--color-accent-1);
 }
 
-.modal__content--btnGet {
-    width: 100%;
-    height: 4.5rem;
-    overflow: hidden;
-}
-
-.btn__Get {
-    width: 100%;
-    height: 100%;
-    font-weight: 600;
-    border-radius: 5px;
-    color: var(--color-primary-1);
-    background-color: var(--color-accent-1);
-}
-
-.modal__content--middle {
-    overflow: hidden;
-    width: 30rem;
-    height: 30rem;
+.modal__top--middle {
+    width: 30%;
+    height: 80%;
 }
 
 .modal__content--img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    overflow: hidden;
 }
 
-.img__description {
+.modal__img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
 }
 
-.modal__content--right {
-    padding: 1.5rem;
+.modal__top--right {
+    width: 35%;
+    height: 70%;
+    padding: 2.5rem;
     border-radius: 10px;
     border: 1px solid var(--color-accent-1);
 }
 
-.modal__content--info {
+.modal__content--right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__list--right {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
     width: 100%;
     height: 100%;
     gap: 2rem;
+    border-bottom: thin solid var(--color-accent-1);
 }
-
-.modal__list--info {
-    display: flex;
-    gap: 1rem;
-    border-bottom: 1px solid var(--color-accent-1);
-}
-
 
 .modal__content--botton {
     width: 100%;
-    padding: 1rem;
-    height: auto;
+    height: 20%;
 }
 
-.modal__content--list {
+.modal__botton {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
-    margin-top: 1.5rem;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding-top: 5rem;
 }
 
 .modal__list--botton {
-    font-size: 1.2rem;
+    color: var(--color-accent-1);
+    transition: all 300ms ease-in-out;
 }
+
+.modal__list--botton:hover  {
+    color: var(--color-secundary-1);
+}
+
+
+
+
+
+
+
+
+
 
 
 
