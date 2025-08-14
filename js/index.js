@@ -63,11 +63,13 @@ function selectData(data) {
     }
     const courseId = courseObj.id;
     const courseFind = courses.find(course => course.id === courseId);
+    arrayDescription = [];
     arrayDescription.push(courseFind);
     renderCourseDescription();
 }
 
-function renderCourseDescription() {
+function renderCourseDescription() { 
+    cleanModal()
     arrayDescription.forEach(array => {
         const {subject, tittle, description, duration, price, poster, author, id} = array;
         const itemDescription = document.createElement('section');
@@ -190,31 +192,30 @@ function renderCourseDescription() {
 }
 
 function closeModal(e) {
-    if (e.target.classList.contains('modal__btn--close')) {
+    if (e.target.classList.contains('modal__icon--close')) {
         const courseId = e.target.getAttribute('data-id');
         arrayDescription = arrayDescription.filter(course => course.id !== courseId);
+        console.log(arrayDescription)
         openModal.classList.remove('modal__background--active');
     }
 }
 
-
-
-
-
-
-
-
-/*
-
-function eliminarProducto (e) {
-    if (e.target.classList.contains('modal__btn--close')) {
-        const courseId = e.target.getAttribute('data-id');
-        //Eliminar del arreglo por el data-id
-        arrayDescription = arrayDescription.filter(course => course.id !== courseId);
-        modalDescription.classList.remove('modal__background--active');
+function cleanModal() {
+    while(modalContentItem.firstChild) {
+        modalContentItem.removeChild(modalContentItem.firstChild)
     }
 }
-    */
+
+
+
+
+
+
+
+
+
+
+
 
 
 

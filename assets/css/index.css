@@ -472,6 +472,7 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #ffffff45;
+    cursor: pointer;
     transition: 300ms ease-in-out;
 }
 
@@ -577,6 +578,7 @@ body {
     font-weight: bold;
     color: var(--color-primary-1);
     border: none;
+    cursor: pointer;
     transition: 150ms ease-in-out;
 }
 
