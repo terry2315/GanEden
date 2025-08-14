@@ -1,169 +1,210 @@
-//Variables
-const mainCourses = document.querySelector('#main__content--courses');
-const btnSubject = document.querySelectorAll('.btn__subject');
-//Modal
-const modalDescription = document.querySelector('.modal__background');
-const closeModal = document.querySelector('.modal__background');
-const contentModalDescription = document.querySelector('#modal__background');
+const contentCourses = document.querySelector('#main__content--courses');
 
+
+
+renderCourses();
+function renderCourses () {
+    courses.forEach(course => {
+        const {subject, tittle, duration, price, poster, author, id} = course;
+        const itemCourse = document.createElement('article');
+        itemCourse.classList.add('course');
+        itemCourse.innerHTML += `
+                   <div class="course__content--img">
+                        <img class="course__img" src="${poster}" alt="">
+                    </div>
+                    <div class="course__content--description">
+                        <ul class="course__description--left">
+                            <li class="course__list--left">Materia :</li>
+                            <li class="course__list--left">Titulo :</li>
+                            <li class="course__list--left">Duracion :</li>
+                            <li class="course__list--left">Precio :</li>
+                            <li class="course__list--left">Profesor :</li>
+                        </ul>
+                        <ul class="course__description--right">
+                            <li class="course__list--right">${subject}</li>
+                            <li class="course__list--right">${tittle}</li>
+                            <li class="course__list--right">${duration}</li>
+                            <li class="course__list--right">${price}</li>
+                            <li class="course__list--right">${author}</li>
+                        </ul>
+                    </div>
+                    <div class="course__content--btn">
+                       <button data-id="${id}" class="course__btn">Ver mas</button>   
+                    </div>
+        `;
+        contentCourses.appendChild(itemCourse);
+    });
+}
+
+//Modal
+
+const openModal = document.querySelector('.modal__background');
+const modalMain = document.querySelector('#main__content--courses');
+const modalContentItem = document.querySelector('#modal__content--main');
+const modalBtnClose = document.querySelector('#modal__content');
 let arrayDescription = [];
 
 
-eventListener();
-//Crear escuchador de eventos
-function eventListener() {
-    renderCoursesMain();
-    mainCourses.addEventListener('click', getDataCourse);
-    //Boton para cerrar Modal
-    closeModal.addEventListener('click', eliminarProducto)
-}
 
-//Rederizar cursos en el menu principal
-function renderCoursesMain() {
-    courses.forEach(course => {
-        const { subject, tittle, duration, price, author, id, poster } = course;
-        const courseMain = document.createElement('article');
-        courseMain.classList.add('course');
-        courseMain.innerHTML = `
-            <div class="course__content--img">
-                <img class="course__img" src="${poster}" alt="${tittle}">
-            </div>
-            <div class="course__content--description">
-                <ul class="course__description--left">
-                    <li class="course__list--left">Materia :</li>
-                    <li class="course__list--left">Titulo :</li>
-                    <li class="course__list--left">Duracion :</li>
-                    <li class="course__list--left">Precio :</li>
-                    <li class="course__list--left">Profesor :</li>
-                </ul>
-                <ul class="course__description--right">
-                    <li class="course__list--right">${subject}</li>
-                    <li class="course__list--right">${tittle}</li>
-                    <li class="course__list--right">${duration}  horas</li>
-                    <li class="course__list--right">$ ${price}</li>
-                    <li class="course__list--right">${author}</li>
-                </ul>
-            </div>
-            <div class="course__content--btn">
-               <button data-id="${id}" class="course__btn">Ver mas</button>   
-            </div>
-        `;
-        mainCourses.appendChild(courseMain);
-    });
-}
-//Obtener los datos del course y mostrarlos en el modal para visualizar description mas completa.
-function getDataCourse(e) {
+modalMain.addEventListener('click', getDataElements);
+modalBtnClose.addEventListener('click', closeModal);
+
+function getDataElements(e) {
     if (e.target.classList.contains('course__btn')) {
-        const elementHTML = e.target.parentElement;
-        modalDescription.classList.add('modal__background--active');
-        selectData(elementHTML);
+        const dataHTML = e.target.parentElement.parentElement
+        openModal.classList.add('modal__background--active');
+        selectData(dataHTML);
     }
 }
-//Seleccionar datos del curso
-function selectData(course) {
+
+function selectData(data) {
     const courseObj = {
-        id: course.querySelector('button').getAttribute('data-id'),
+        id: data.querySelector('button').getAttribute('data-id'),
     }
     const courseId = courseObj.id;
-    const findCourse = courses.find(course => course.id === courseId);
-    arrayDescription.push(findCourse);
-    renderModalDescription();
+    const courseFind = courses.find(course => course.id === courseId);
+    arrayDescription.push(courseFind);
+    renderCourseDescription();
 }
 
-//Renderizar Objeto en el modal
-function renderModalDescription() {
+function renderCourseDescription() {
     arrayDescription.forEach(array => {
-        const { subject, tittle, description, duration, price, poster, author, id } = array;
-        const modalDescription = document.createElement('section');
-        modalDescription.classList.add('modal__content');
-        modalDescription.innerHTML += `
-            
-                    <header class="modal__header">
+        const {subject, tittle, description, duration, price, poster, author, id} = array;
+        const itemDescription = document.createElement('section');
+        itemDescription.classList.add('modal__itemDescription');
+        itemDescription.innerHTML = `
+                         <header class="modal__header">
+                                <div class="navbar__content--logo">
+                                    <a href="#" class="navbar__content--letter">
+                                        <span class="logo__span">G</span>
+                                        <p class="logo__text">anEden</p>
+                                    </a>
+                                </div>
 
-                        <div class="navbar__content--logo">
-                            <a href="#" class="navbar__content--letter">
-                                <span class="logo__span">G</span>
-                                <p class="logo__text">anEden</p>
-                            </a>
-                        </div>
+                                <div class="modal__content--btn">
+                                    <button data-id="${id}" class="modal__btn--close">
+                                        <i class="modal__icon--close fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                            </header>
 
-                        <div class="modal__header--content">
-                            <button data-id="${id}" class="modal__btn--close">X</button>
-                        </div>
-                    </header>
+                            <section class="modal__content--description">
 
-                    <main id="modal__main" class="modal__main">
+                                <!-- Contenedor izquierdo -->
+                                <div class="modal__content--top">
+                                    <div class="modal__description--left">
+                                        <h2 class="modal__description--tittle">${tittle}</h2>
+                                        <div class="modal__content--text">
+                                            <p class="modal__text">
+                                                ${description}
+                                            </p>
+                                        </div>
 
-                        <section id="modal__content--description" class="modal__content--description">
-                              <div class="modal__content--top">
-                                <article class="modal__top--left">
-                                    <h4 class="modal__tittle">${tittle}</h4>
-                                    <p class="modal__description--text">
-                                        ${description}
-                                    </p>
-                                    <div class="modal__content--price">
-                                        <p class="modal__price--text">$ ${price} USD</p>
-                                        <button data-id="${id}" class="modal__price--btn">Ver medio de pago</button>
+                                        <div class="modal__content--price">
+                                            <p class="modal__price">
+                                                <i class="fa-solid fa-dollar-sign"></i>
+                                                <span class="modal__price--span">${price}</span> USD
+                                            </p>
+                                            <a class="modal__method--pay" href="#">Ver medios de pago</a>
+                                        </div>
+
+                                        <div class="modal__content--pay">
+                                            <button class="modal__btn--pay">Comprar curso</button>
+                                        </div>
                                     </div>
-                                </article>
-                                <article class="modal__top--middle">
-                                    <div class="modal__content--img">
-                                        <img class="modal__img" src="${poster}" alt="${tittle}">
+
+                                    <!-- Contenedor derecho -->
+
+                                    <div class="modal__description--right">
+                                        <div class="modal__content--img">
+                                            <img class="modal__img" src="${poster}" alt="${tittle}">
+                                        </div>
+
+                                        <div class="modal__content--info">
+                                            <ul class="modal__content--list">
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </article>
-                                <article class="modal__top--right">
-                                    <ul class="modal__content--right">
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Clases en vivo</p>
+                                </div>
+
+                                <div class="modal__content--botton">
+                                    <ul class="modal__content--list--botton">
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">${duration}</p>
                                         </li>
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Acceso contenido 24/7</p>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">${author}</p>
                                         </li>
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Contacto directo con tu mentor</p>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">${subject}</p>
                                         </li>
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Como vivir con contante extasis</p>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">${price}</p>
+                                        </li>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">${duration}</p>
                                         </li>
                                     </ul>
-                                </article>
-                            </div>
-                            <div class="modal__content--botton">
-                                <ul class="modal__botton">
-                                    <li class="modal__list--botton">
-                                        <i class="fa-solid fa-calendar"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${duration}</p>
-                                    </li>
-                                    <li class="modal__list--botton">
-                                        <i class="fa-solid fa-clock"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${subject}</p>
-                                    </li>
-                                    <li class="modal__list--botton">
-                                        <i class="fa-brands fa-youtube"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${author}</p>
-                                    </li>
-                                    <li class="modal__list--botton">
-                                        <i class="fa-solid fa-hard-drive"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${subject}</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-
-                    </main>
-            
+                                </div>
         `;
-        contentModalDescription.appendChild(modalDescription);
+        modalContentItem.appendChild(itemDescription);
     });
 }
+
+function closeModal(e) {
+    if (e.target.classList.contains('modal__btn--close')) {
+        const courseId = e.target.getAttribute('data-id');
+        arrayDescription = arrayDescription.filter(course => course.id !== courseId);
+        openModal.classList.remove('modal__background--active');
+    }
+}
+
+
+
+
+
+
+
+
+/*
 
 function eliminarProducto (e) {
     if (e.target.classList.contains('modal__btn--close')) {
@@ -173,10 +214,7 @@ function eliminarProducto (e) {
         modalDescription.classList.remove('modal__background--active');
     }
 }
-
-
-
-
+    */
 
 
 

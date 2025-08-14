@@ -164,10 +164,6 @@
                            <button data-id="id" class="course__btn">Ver mas</button>   
                         </div>
                     </article> -->
-
-
-
-
                 </main>
 
             </section>
@@ -175,90 +171,137 @@
             <!-- Modal -->
 
             <section id="modal__background" class="modal__background">
-                <!-- <section class="modal__content">
+                <section id="modal__content" class="modal__content">
+                    <section id="modal__content--main" class="modal__content--main">
 
-                    <header class="modal__header">
+                        <!-- Plantilla para JavaScript -->
+                        
 
-                        <div class="navbar__content--logo">
-                            <a href="#" class="navbar__content--letter">
-                                <span class="logo__span">G</span>
-                                <p class="logo__text">anEden</p>
-                            </a>
-                        </div>
+                            
+                            <!-- <header class="modal__header">
+                                <div class="navbar__content--logo">
+                                    <a href="#" class="navbar__content--letter">
+                                        <span class="logo__span">G</span>
+                                        <p class="logo__text">anEden</p>
+                                    </a>
+                                </div>
 
-                        <div class="modal__header--content">
-                            <button class="modal__btn--close">X</button>
-                        </div>
-                    </header>
+                                <div class="modal__content--btn">
+                                    <button class="modal__btn--close">
+                                        <i class="modal__icon--close fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                            </header>
 
-                    <main id="modal__main" class="modal__main">
+                            <section class="modal__content--description">
 
-                        <section id="modal__content--description" class="modal__content--description">
-                              <div class="modal__content--top">
-                                <article class="modal__top--left">
-                                    <h4 class="modal__tittle">${tittle}</h4>
-                                    <p class="modal__description--text">
-                                        ${description}
-                                    </p>
-                                    <div class="modal__content--price">
-                                        <p class="modal__price--text">$ ${price} USD</p>
-                                        <button data-id="${id}" class="modal__price--btn">Ver medio de pago</button>
+                                <!-- Contenedor izquierdo 
+                                <div class="modal__content--top">
+                                    <div class="modal__description--left">
+                                        <h2 class="modal__description--tittle">Curso de Desarrollo Web</h2>
+                                        <div class="modal__content--text">
+                                            <p class="modal__text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Non molestias voluptas eum quae aut asperiores quod possimus
+                                                doloribus, incidunt qui veniam impedit nam cupiditate libero 
+                                                magni adipisci. Quis, praesentium ipsum.
+                                            </p>
+                                        </div>
+
+                                        <div class="modal__content--price">
+                                            <p class="modal__price">
+                                                <i class="fa-solid fa-dollar-sign"></i>
+                                                <span class="modal__price--span">233</span> USD
+                                            </p>
+                                            <a class="modal__method--pay" href="#">Ver medios de pago</a>
+                                        </div>
+
+                                        <div class="modal__content--pay">
+                                            <button class="modal__btn--pay">Comprar curso</button>
+                                        </div>
                                     </div>
-                                </article>
-                                <article class="modal__top--middle">
-                                    <div class="modal__content--img">
-                                        <img class="modal__img" src="${poster}" alt="${tittle}">
+
+                                    <!-- Contenedor derecho 
+
+                                    <div class="modal__description--right">
+                                        <div class="modal__content--img">
+                                            <img class="modal__img" src="./assets/img/car_img/car_1.jpg" alt="">
+                                        </div>
+
+                                        <div class="modal__content--info">
+                                            <ul class="modal__content--list">
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+
+                                                <li class="modal__list--info">
+                                                    <i class="modal__icon--check fa-solid fa-circle-check"></i>
+                                                    <p class="modal__list--text">Clases online en vivo con mentores expertos</p>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </article>
-                                <article class="modal__top--right">
-                                    <ul class="modal__content--right">
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Clases en vivo</p>
+                                </div>
+
+                                <div class="modal__content--botton">
+                                    <ul class="modal__content--list--botton">
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">10 Semanas</p>
                                         </li>
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Acceso contenido 24/7</p>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">10 Semanas</p>
                                         </li>
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Contacto directo con tu mentor</p>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">10 Semanas</p>
                                         </li>
-                                        <li class="modal__list--right">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p class="modal__text--right">Como vivir con contante extasis</p>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">10 Semanas</p>
+                                        </li>
+
+                                        <li class="modal__list--botton">
+                                            <i class="modal__icon--botton fa-brands fa-youtube"></i>
+                                            <p class="modal__text--botton">Duracion</p>
+                                            <p class="modal__text--botton">10 Semanas</p>
                                         </li>
                                     </ul>
-                                </article>
-                            </div>
-                            <div class="modal__content--botton">
-                                <ul class="modal__botton">
-                                    <li class="modal__list--botton">
-                                        <i class="fa-solid fa-calendar"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${duration}</p>
-                                    </li>
-                                    <li class="modal__list--botton">
-                                        <i class="fa-solid fa-clock"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${subject}</p>
-                                    </li>
-                                    <li class="modal__list--botton">
-                                        <i class="fa-brands fa-youtube"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${author}</p>
-                                    </li>
-                                    <li class="modal__list--botton">
-                                        <i class="fa-solid fa-hard-drive"></i>
-                                        <p class="modal__botton--text">Duracion</p>
-                                        <p class="modal__botton--text">${subject}</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
+                                </div> 
+                                
+                            </section>
+                            -->
+                            <!-- Plantilla para JavaScript -->
 
-                    </main>
-                </section> -->
+                    
+
+                    </section>
+                </section>
+
             </section>
 
         </main>
